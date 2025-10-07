@@ -17,7 +17,7 @@ const Index = () => {
   const apps = [
     { id: "about", icon: User, label: "About", gradient: "bg-gradient-to-br from-blue-500 to-blue-600" },
     { id: "experience", icon: Briefcase, label: "Experience", gradient: "bg-gradient-to-br from-purple-500 to-purple-600" },
-    { id: "projects", icon: Code2, label: "Projects", gradient: "bg-gradient-to-br from-green-500 to-green-600", badge: 4 },
+    { id: "projects", icon: Code2, label: "Projects", gradient: "bg-gradient-to-br from-green-500 to-green-600", badge: 10 },
     { id: "skills", icon: Sparkles, label: "Skills", gradient: "bg-gradient-to-br from-pink-500 to-rose-600" },
     { id: "blog", icon: BookOpen, label: "Blog", gradient: "bg-gradient-to-br from-orange-500 to-amber-600" },
     { id: "contact", icon: Mail, label: "Contact", gradient: "bg-gradient-to-br from-red-500 to-red-600" },

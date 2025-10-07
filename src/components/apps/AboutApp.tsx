@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, MapPin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, MapPin, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const AboutApp = () => {
@@ -11,12 +11,12 @@ export const AboutApp = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-xl">
-          <span className="text-5xl">👨‍💻</span>
+        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-600 flex items-center justify-center shadow-xl">
+          <span className="text-5xl font-bold text-white">KK</span>
         </div>
         <div>
-          <h2 className="text-3xl font-bold text-foreground">Your Name</h2>
-          <p className="text-lg text-muted-foreground">Full Stack Developer</p>
+          <h2 className="text-3xl font-bold text-foreground">Kasim Kadiwala</h2>
+          <p className="text-lg text-muted-foreground">Frontend Developer</p>
         </div>
       </motion.div>
 
@@ -29,30 +29,34 @@ export const AboutApp = () => {
       >
         <h3 className="text-xl font-semibold mb-3 text-foreground">About Me</h3>
         <p className="text-muted-foreground leading-relaxed">
-          Passionate developer with 5+ years of experience building beautiful and functional web applications. 
-          Specialized in React, TypeScript, and modern web technologies. Love creating intuitive user experiences 
-          and solving complex problems.
+          Frontend Developer with 1.7+ years of experience specializing in React.js, React Native, and modern JavaScript frameworks. 
+          Proven track record of building scalable web applications, improving performance by 30%+, and delivering user-centric 
+          solutions for 500+ active users. Expertise in responsive design, component architecture, and cross-platform mobile development.
         </p>
       </motion.div>
 
       {/* Quick Stats */}
       <motion.div
-        className="grid grid-cols-3 gap-4"
+        className="grid grid-cols-2 gap-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
         <div className="bg-card rounded-2xl p-4 text-center shadow-lg">
-          <div className="text-3xl font-bold text-primary">5+</div>
+          <div className="text-3xl font-bold text-primary">1.7+</div>
           <div className="text-sm text-muted-foreground">Years Exp</div>
         </div>
         <div className="bg-card rounded-2xl p-4 text-center shadow-lg">
-          <div className="text-3xl font-bold text-primary">50+</div>
+          <div className="text-3xl font-bold text-primary">10</div>
           <div className="text-sm text-muted-foreground">Projects</div>
         </div>
         <div className="bg-card rounded-2xl p-4 text-center shadow-lg">
-          <div className="text-3xl font-bold text-primary">20+</div>
-          <div className="text-sm text-muted-foreground">Clients</div>
+          <div className="text-3xl font-bold text-primary">3</div>
+          <div className="text-sm text-muted-foreground">Companies</div>
+        </div>
+        <div className="bg-card rounded-2xl p-4 text-center shadow-lg">
+          <div className="text-3xl font-bold text-primary">500+</div>
+          <div className="text-sm text-muted-foreground">Users Served</div>
         </div>
       </motion.div>
 
@@ -65,17 +69,23 @@ export const AboutApp = () => {
       >
         <h3 className="text-xl font-semibold mb-3 text-foreground">Get in Touch</h3>
         <div className="space-y-3">
-          <div className="flex items-center gap-3 text-muted-foreground">
+          <a 
+            href="mailto:kasimkkn15@gmail.com"
+            className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+          >
             <Mail className="w-5 h-5 text-primary" />
-            <span>hello@example.com</span>
-          </div>
-          <div className="flex items-center gap-3 text-muted-foreground">
+            <span className="text-sm">kasimkkn15@gmail.com</span>
+          </a>
+          <a 
+            href="tel:+918459258801"
+            className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+          >
             <Phone className="w-5 h-5 text-primary" />
-            <span>+1 (555) 123-4567</span>
-          </div>
+            <span className="text-sm">+91 8459258801</span>
+          </a>
           <div className="flex items-center gap-3 text-muted-foreground">
             <MapPin className="w-5 h-5 text-primary" />
-            <span>San Francisco, CA</span>
+            <span className="text-sm">Ahmedabad, Gujarat, India</span>
           </div>
         </div>
       </motion.div>
@@ -87,20 +97,26 @@ export const AboutApp = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
-        {[
-          { icon: Github, color: "from-gray-700 to-gray-900" },
-          { icon: Linkedin, color: "from-blue-600 to-blue-800" },
-          { icon: Twitter, color: "from-sky-500 to-blue-600" },
-        ].map((social, i) => (
-          <motion.button
-            key={i}
-            className={`w-14 h-14 rounded-full bg-gradient-to-br ${social.color} flex items-center justify-center shadow-lg`}
-            whileTap={{ scale: 0.9 }}
-            whileHover={{ scale: 1.1 }}
-          >
-            <social.icon className="w-6 h-6 text-white" />
-          </motion.button>
-        ))}
+        <motion.a
+          href="https://github.com/[your-username]"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center shadow-lg"
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <Github className="w-6 h-6 text-white" />
+        </motion.a>
+        <motion.a
+          href="https://linkedin.com/in/[your-profile]"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-lg"
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <Linkedin className="w-6 h-6 text-white" />
+        </motion.a>
       </motion.div>
     </div>
   );
