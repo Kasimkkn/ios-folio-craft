@@ -6,7 +6,7 @@ interface AppIconProps {
   label: string;
   gradient: string;
   onClick: () => void;
-  badge?: number;
+  badge?: number | string;
 }
 
 export const AppIcon = ({ icon: Icon, label, gradient, onClick, badge }: AppIconProps) => {
@@ -28,10 +28,15 @@ export const AppIcon = ({ icon: Icon, label, gradient, onClick, badge }: AppIcon
         }}
       >
         <Icon className="w-8 h-8 text-white" strokeWidth={2} />
-        {badge && badge > 0 && (
-          <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
-            {badge > 9 ? "9+" : badge}
-          </div>
+        {badge && (
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 500, damping: 15, delay: 0.2 }}
+            className="absolute -top-1 -right-1 min-w-5 h-5 px-1 bg-[#FF3B30] rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg"
+          >
+            {typeof badge === "number" && badge > 9 ? "9+" : badge}
+          </motion.div>
         )}
       </motion.div>
       <span className="text-xs font-medium text-foreground drop-shadow-sm max-w-[70px] text-center truncate">

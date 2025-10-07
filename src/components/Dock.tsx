@@ -16,7 +16,7 @@ export const Dock = ({ onAppOpen }: DockProps) => {
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
       <motion.div
-        className="glass rounded-[28px] px-4 py-3 flex items-center gap-4 shadow-2xl"
+        className="glass-dark rounded-[24px] px-2 py-2 flex items-center gap-3 shadow-[0_-2px_20px_rgba(0,0,0,0.3)] border-t border-white/20"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, type: "spring", stiffness: 260, damping: 20 }}
@@ -24,13 +24,13 @@ export const Dock = ({ onAppOpen }: DockProps) => {
         {dockApps.map((app) => (
           <motion.button
             key={app.id}
-            className={`w-14 h-14 rounded-[22%] ${app.gradient} shadow-lg flex items-center justify-center`}
+            className={`w-16 h-16 rounded-[22%] ${app.gradient} shadow-lg flex items-center justify-center`}
             whileTap={{ scale: 0.9 }}
-            whileHover={{ scale: 1.1, y: -8 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
             onClick={() => onAppOpen(app.id)}
           >
-            <app.icon className="w-7 h-7 text-white" strokeWidth={2} />
+            <app.icon className="w-8 h-8 text-white" strokeWidth={2} />
           </motion.button>
         ))}
       </motion.div>

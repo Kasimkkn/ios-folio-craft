@@ -10,16 +10,19 @@ import { Dock } from "@/components/Dock";
 import { AppView } from "@/components/AppView";
 import { AboutApp } from "@/components/apps/AboutApp";
 import { ProjectsApp } from "@/components/apps/ProjectsApp";
+import { ExperienceApp } from "@/components/apps/ExperienceApp";
+import { SkillsApp } from "@/components/apps/SkillsApp";
+import { ContactApp } from "@/components/apps/ContactApp";
 
 const Index = () => {
   const [openApp, setOpenApp] = useState<string | null>(null);
 
   const apps = [
     { id: "about", icon: User, label: "About", gradient: "bg-gradient-to-br from-blue-500 to-blue-600" },
-    { id: "experience", icon: Briefcase, label: "Experience", gradient: "bg-gradient-to-br from-purple-500 to-purple-600" },
+    { id: "experience", icon: Briefcase, label: "Experience", gradient: "bg-gradient-to-br from-purple-500 to-purple-600", badge: "NEW" },
     { id: "projects", icon: Code2, label: "Projects", gradient: "bg-gradient-to-br from-green-500 to-green-600", badge: 10 },
     { id: "skills", icon: Sparkles, label: "Skills", gradient: "bg-gradient-to-br from-pink-500 to-rose-600" },
-    { id: "blog", icon: BookOpen, label: "Blog", gradient: "bg-gradient-to-br from-orange-500 to-amber-600" },
+    { id: "blog", icon: BookOpen, label: "Blog", gradient: "bg-gradient-to-br from-orange-500 to-amber-600", badge: 3 },
     { id: "contact", icon: Mail, label: "Contact", gradient: "bg-gradient-to-br from-red-500 to-red-600" },
     { id: "resume", icon: FileText, label: "Resume", gradient: "bg-gradient-to-br from-teal-500 to-cyan-600" },
     { id: "work", icon: Folder, label: "Work", gradient: "bg-gradient-to-br from-indigo-500 to-violet-600" },
@@ -33,6 +36,12 @@ const Index = () => {
         return <AboutApp />;
       case "projects":
         return <ProjectsApp />;
+      case "experience":
+        return <ExperienceApp />;
+      case "skills":
+        return <SkillsApp />;
+      case "contact":
+        return <ContactApp />;
       default:
         return (
           <div className="flex items-center justify-center h-full">
